@@ -5,8 +5,8 @@ import { AppModule } from './app.module';
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   const config = new DocumentBuilder()
-  .setTitle('Simple Assets API Docs for Simple NFT VGA and News NFT')
-  .setDescription('API to connect to Simple Assets in TLK-CHAIN')
+  .setTitle('Assets API Docs for NFT')
+  .setDescription('API to connect to Simple Assets in Terra')
   .setVersion('0.01')
   .addBearerAuth()
   .build();

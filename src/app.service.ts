@@ -8,11 +8,19 @@ const terra = new LCDClient({
   chainID: 'bombay-12',
 });
 
+// walletku
+// const mk = new MnemonicKey({
+//   mnemonic:
+//     'empower laptop potato monitor firm excess virtual matter orient toy wagon spell trigger say review slab real increase match middle spend wagon shell enroll',
+// });
 
+//Wallet kevin
 const mk = new MnemonicKey({
   mnemonic:
-    'empower laptop potato monitor firm excess virtual matter orient toy wagon spell trigger say review slab real increase match middle spend wagon shell enroll',
+    'evolve enroll put track tell clinic pulp lucky potato milk online neutral power raccoon blanket credit derive october adult audit major rally pool travel',
 });
+
+
 
 const wallet = terra.wallet(mk);
 
@@ -20,13 +28,12 @@ const wallet = terra.wallet(mk);
 export class AppService {
   async getHello(): Promise<string> {
     const send = new MsgExecuteContract(
-      'terra1kp209vznl6r9ky0exzqygfwhgky27pm7qklagm',
-      'terra1ejm29a3s9y8znrkcchp4gl9w4r79mjg9mk6kj8',
+      'terra1mzcvtvqml8k5a9e4p4t2h2wxguctcz4fc9jx63',
+      'terra1tpztpe3vh84xddfstm5tanemegqku8prqv86e3',
       {
-        "mint": {
-          "name": "token_name",
-          "token_id": "10004",    
-          "owner": "terra1mzcvtvqml8k5a9e4p4t2h2wxguctcz4fc9jx63",    
+        "mint": {          
+          "token_id": "10001",    
+          // "owner": "terra1mzcvtvqml8k5a9e4p4t2h2wxguctcz4fc9jx63",    
           "token_uri": "QmQPziwFBW9zLVggTbStowV28khP5riFNmHjJxowAA5q25",
           "extension": {}
          }
@@ -53,12 +60,10 @@ export class AppService {
   async getTotalSupply(): Promise<any> {
     try {
       const result = await terra.wasm.contractQuery(
-        'terra1etskav4tg3hw8vpp7vqp5g4xunmaepjfev7hqf',
+        'terra1tpztpe3vh84xddfstm5tanemegqku8prqv86e3',
         { 
-          query: { 
-              "num_tokens": {}    
-           } 
-        } // query msg
+          "num_tokens": {}    
+        } 
       );
   
       return result  
